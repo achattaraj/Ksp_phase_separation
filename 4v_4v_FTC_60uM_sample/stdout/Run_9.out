@@ -1,0 +1,928 @@
+starting NFsim v1.12.1...
+
+Seeding random number generator with: 9
+	Trying to read xml model specification file: 	
+'/home/CAM/achattaraj/NFSim/4v_4v_FTC_60uM_sample.xml'
+		read was successful... beginning parse...
+
+	Creating system: 4v_4v_FTC_60uM
+
+	Reading parameter list...
+		 Identified parameter:	kd	Value:3500
+		 Identified parameter:	kon	Value:0.028571
+		 Identified parameter:	koff	Value:100
+		 Identified parameter:	_rateLaw1	Value:0
+		 Identified parameter:	_rateLaw2	Value:0
+		 Identified parameter:	_rateLaw3	Value:0
+		 Identified parameter:	_rateLaw4	Value:0
+
+	Reading list of MoleculeTypes...
+		Reading and Creating MoleculeType: Source(s)
+		Reading and Creating MoleculeType: poly_A(a1,a2,a3,a4)
+		Reading and Creating MoleculeType: poly_B(b1,b2,b3,b4)
+
+	Reading list of Species...
+		Creating 1 instances of the Species: S1
+			Including Molecule of type: Source with local id: S1_M1
+		Creating 600 instances of the Species: S2
+			Including Molecule of type: poly_A with local id: S2_M1
+		Creating 600 instances of the Species: S3
+			Including Molecule of type: poly_B with local id: S3_M1
+
+	Reading list of Observables...
+		Creating Observable: 'tot_poly_A' of type: 'Molecules'
+				Including Molecule of type: poly_A with local id: O1_P1_M1
+				 => Final processed pattern: poly_A()
+		Creating Observable: 'free_poly_A' of type: 'Molecules'
+				Including Molecule of type: poly_A with local id: O2_P1_M1
+				 => Final processed pattern: poly_A(a1,a2,a3,a4)
+		Creating Observable: 'tot_poly_B' of type: 'Molecules'
+				Including Molecule of type: poly_B with local id: O3_P1_M1
+				 => Final processed pattern: poly_B()
+		Creating Observable: 'free_poly_B' of type: 'Molecules'
+				Including Molecule of type: poly_B with local id: O4_P1_M1
+				 => Final processed pattern: poly_B(b1,b2,b3,b4)
+
+	Reading list of Functions...
+
+	Reading list of Reaction Rules...
+
+		Reading Reaction Rule: RR1 to find symmetries...  			No symmetry found.
+		Creating Reaction Rule: create_poly_A
+			Using symmetry factor = 1
+			Reading Reactant Pattern: RR1_RP1
+				Including Molecule of type: Source with local id: RR1_RP1_M1
+				 => Final processed pattern: Source(s)
+			***Identified addition of product: RR1_PP2_M1.
+				Including Product Molecule of type: poly_A with local id: RR1_PP2_M1
+			Total rate flag = 0
+			Rate Law for Reaction is: Ele
+				...setting elementary rate to be: _rateLaw1 (has value: 0)
+
+		Reading Reaction Rule: RR2 to find symmetries...  			No symmetry found.
+		Creating Reaction Rule: decay_poly_A
+			Using symmetry factor = 1
+			Reading Reactant Pattern: RR2_RP1
+				Including Molecule of type: poly_A with local id: RR2_RP1_M1
+				 => Final processed pattern: poly_A(a1,a2,a3,a4)
+			***Identified deletion of the complete pattern: RR2_RP1. 
+				DeleteMolecules keyword is turned off, so the full species will be removed.
+			Total rate flag = 0
+			Rate Law for Reaction is: Ele
+				...setting elementary rate to be: _rateLaw2 (has value: 0)
+
+		Reading Reaction Rule: RR3 to find symmetries...  			No symmetry found.
+		Creating Reaction Rule: create_poly_B
+			Using symmetry factor = 1
+			Reading Reactant Pattern: RR3_RP1
+				Including Molecule of type: Source with local id: RR3_RP1_M1
+				 => Final processed pattern: Source(s)
+			***Identified addition of product: RR3_PP2_M1.
+				Including Product Molecule of type: poly_B with local id: RR3_PP2_M1
+			Total rate flag = 0
+			Rate Law for Reaction is: Ele
+				...setting elementary rate to be: _rateLaw3 (has value: 0)
+
+		Reading Reaction Rule: RR4 to find symmetries...  			No symmetry found.
+		Creating Reaction Rule: decay_poly_B
+			Using symmetry factor = 1
+			Reading Reactant Pattern: RR4_RP1
+				Including Molecule of type: poly_B with local id: RR4_RP1_M1
+				 => Final processed pattern: poly_B(b1,b2,b3,b4)
+			***Identified deletion of the complete pattern: RR4_RP1. 
+				DeleteMolecules keyword is turned off, so the full species will be removed.
+			Total rate flag = 0
+			Rate Law for Reaction is: Ele
+				...setting elementary rate to be: _rateLaw4 (has value: 0)
+
+		Reading Reaction Rule: RR5 to find symmetries...  			No symmetry found.
+		Creating Reaction Rule: Rule_1
+			Using symmetry factor = 1
+			Reading Reactant Pattern: RR5_RP1
+				Including Molecule of type: poly_A with local id: RR5_RP1_M1
+				 => Final processed pattern: poly_A(a1)
+			Reading Reactant Pattern: RR5_RP2
+				Including Molecule of type: poly_B with local id: RR5_RP2_M1
+				 => Final processed pattern: poly_B(b1)
+			***Identified binding of site: poly_A(a1) to site poly_B(b1)
+			Total rate flag = 0
+			Rate Law for Reaction is: Ele
+				...setting elementary rate to be: kon (has value: 0.028571)
+
+		Reading Reaction Rule: RR6 to find symmetries...  			No symmetry found.
+		Creating Reaction Rule: _reverse_Rule_1
+			Using symmetry factor = 1
+			Reading Reactant Pattern: RR6_RP1
+				Including Molecule of type: poly_A with local id: RR6_RP1_M1
+				Including Molecule of type: poly_B with local id: RR6_RP1_M2
+				 => Final processed pattern: poly_A(a1!1).poly_B(b1!1)
+			***Identified unbinding of site: poly_A(a1) to site poly_B(b1)
+			Total rate flag = 0
+			Rate Law for Reaction is: Ele
+				...setting elementary rate to be: koff (has value: 100)
+
+		Reading Reaction Rule: RR7 to find symmetries...  			No symmetry found.
+		Creating Reaction Rule: Rule_2
+			Using symmetry factor = 1
+			Reading Reactant Pattern: RR7_RP1
+				Including Molecule of type: poly_A with local id: RR7_RP1_M1
+				 => Final processed pattern: poly_A(a1)
+			Reading Reactant Pattern: RR7_RP2
+				Including Molecule of type: poly_B with local id: RR7_RP2_M1
+				 => Final processed pattern: poly_B(b2)
+			***Identified binding of site: poly_A(a1) to site poly_B(b2)
+			Total rate flag = 0
+			Rate Law for Reaction is: Ele
+				...setting elementary rate to be: kon (has value: 0.028571)
+
+		Reading Reaction Rule: RR8 to find symmetries...  			No symmetry found.
+		Creating Reaction Rule: _reverse_Rule_2
+			Using symmetry factor = 1
+			Reading Reactant Pattern: RR8_RP1
+				Including Molecule of type: poly_A with local id: RR8_RP1_M1
+				Including Molecule of type: poly_B with local id: RR8_RP1_M2
+				 => Final processed pattern: poly_A(a1!1).poly_B(b2!1)
+			***Identified unbinding of site: poly_A(a1) to site poly_B(b2)
+			Total rate flag = 0
+			Rate Law for Reaction is: Ele
+				...setting elementary rate to be: koff (has value: 100)
+
+		Reading Reaction Rule: RR9 to find symmetries...  			No symmetry found.
+		Creating Reaction Rule: Rule_3
+			Using symmetry factor = 1
+			Reading Reactant Pattern: RR9_RP1
+				Including Molecule of type: poly_A with local id: RR9_RP1_M1
+				 => Final processed pattern: poly_A(a1)
+			Reading Reactant Pattern: RR9_RP2
+				Including Molecule of type: poly_B with local id: RR9_RP2_M1
+				 => Final processed pattern: poly_B(b3)
+			***Identified binding of site: poly_A(a1) to site poly_B(b3)
+			Total rate flag = 0
+			Rate Law for Reaction is: Ele
+				...setting elementary rate to be: kon (has value: 0.028571)
+
+		Reading Reaction Rule: RR10 to find symmetries...  			No symmetry found.
+		Creating Reaction Rule: _reverse_Rule_3
+			Using symmetry factor = 1
+			Reading Reactant Pattern: RR10_RP1
+				Including Molecule of type: poly_A with local id: RR10_RP1_M1
+				Including Molecule of type: poly_B with local id: RR10_RP1_M2
+				 => Final processed pattern: poly_A(a1!1).poly_B(b3!1)
+			***Identified unbinding of site: poly_A(a1) to site poly_B(b3)
+			Total rate flag = 0
+			Rate Law for Reaction is: Ele
+				...setting elementary rate to be: koff (has value: 100)
+
+		Reading Reaction Rule: RR11 to find symmetries...  			No symmetry found.
+		Creating Reaction Rule: Rule_4
+			Using symmetry factor = 1
+			Reading Reactant Pattern: RR11_RP1
+				Including Molecule of type: poly_A with local id: RR11_RP1_M1
+				 => Final processed pattern: poly_A(a1)
+			Reading Reactant Pattern: RR11_RP2
+				Including Molecule of type: poly_B with local id: RR11_RP2_M1
+				 => Final processed pattern: poly_B(b4)
+			***Identified binding of site: poly_A(a1) to site poly_B(b4)
+			Total rate flag = 0
+			Rate Law for Reaction is: Ele
+				...setting elementary rate to be: kon (has value: 0.028571)
+
+		Reading Reaction Rule: RR12 to find symmetries...  			No symmetry found.
+		Creating Reaction Rule: _reverse_Rule_4
+			Using symmetry factor = 1
+			Reading Reactant Pattern: RR12_RP1
+				Including Molecule of type: poly_A with local id: RR12_RP1_M1
+				Including Molecule of type: poly_B with local id: RR12_RP1_M2
+				 => Final processed pattern: poly_A(a1!1).poly_B(b4!1)
+			***Identified unbinding of site: poly_A(a1) to site poly_B(b4)
+			Total rate flag = 0
+			Rate Law for Reaction is: Ele
+				...setting elementary rate to be: koff (has value: 100)
+
+		Reading Reaction Rule: RR13 to find symmetries...  			No symmetry found.
+		Creating Reaction Rule: Rule_5
+			Using symmetry factor = 1
+			Reading Reactant Pattern: RR13_RP1
+				Including Molecule of type: poly_A with local id: RR13_RP1_M1
+				 => Final processed pattern: poly_A(a2)
+			Reading Reactant Pattern: RR13_RP2
+				Including Molecule of type: poly_B with local id: RR13_RP2_M1
+				 => Final processed pattern: poly_B(b1)
+			***Identified binding of site: poly_A(a2) to site poly_B(b1)
+			Total rate flag = 0
+			Rate Law for Reaction is: Ele
+				...setting elementary rate to be: kon (has value: 0.028571)
+
+		Reading Reaction Rule: RR14 to find symmetries...  			No symmetry found.
+		Creating Reaction Rule: _reverse_Rule_5
+			Using symmetry factor = 1
+			Reading Reactant Pattern: RR14_RP1
+				Including Molecule of type: poly_A with local id: RR14_RP1_M1
+				Including Molecule of type: poly_B with local id: RR14_RP1_M2
+				 => Final processed pattern: poly_A(a2!1).poly_B(b1!1)
+			***Identified unbinding of site: poly_A(a2) to site poly_B(b1)
+			Total rate flag = 0
+			Rate Law for Reaction is: Ele
+				...setting elementary rate to be: koff (has value: 100)
+
+		Reading Reaction Rule: RR15 to find symmetries...  			No symmetry found.
+		Creating Reaction Rule: Rule_6
+			Using symmetry factor = 1
+			Reading Reactant Pattern: RR15_RP1
+				Including Molecule of type: poly_A with local id: RR15_RP1_M1
+				 => Final processed pattern: poly_A(a2)
+			Reading Reactant Pattern: RR15_RP2
+				Including Molecule of type: poly_B with local id: RR15_RP2_M1
+				 => Final processed pattern: poly_B(b2)
+			***Identified binding of site: poly_A(a2) to site poly_B(b2)
+			Total rate flag = 0
+			Rate Law for Reaction is: Ele
+				...setting elementary rate to be: kon (has value: 0.028571)
+
+		Reading Reaction Rule: RR16 to find symmetries...  			No symmetry found.
+		Creating Reaction Rule: _reverse_Rule_6
+			Using symmetry factor = 1
+			Reading Reactant Pattern: RR16_RP1
+				Including Molecule of type: poly_A with local id: RR16_RP1_M1
+				Including Molecule of type: poly_B with local id: RR16_RP1_M2
+				 => Final processed pattern: poly_A(a2!1).poly_B(b2!1)
+			***Identified unbinding of site: poly_A(a2) to site poly_B(b2)
+			Total rate flag = 0
+			Rate Law for Reaction is: Ele
+				...setting elementary rate to be: koff (has value: 100)
+
+		Reading Reaction Rule: RR17 to find symmetries...  			No symmetry found.
+		Creating Reaction Rule: Rule_7
+			Using symmetry factor = 1
+			Reading Reactant Pattern: RR17_RP1
+				Including Molecule of type: poly_A with local id: RR17_RP1_M1
+				 => Final processed pattern: poly_A(a2)
+			Reading Reactant Pattern: RR17_RP2
+				Including Molecule of type: poly_B with local id: RR17_RP2_M1
+				 => Final processed pattern: poly_B(b3)
+			***Identified binding of site: poly_A(a2) to site poly_B(b3)
+			Total rate flag = 0
+			Rate Law for Reaction is: Ele
+				...setting elementary rate to be: kon (has value: 0.028571)
+
+		Reading Reaction Rule: RR18 to find symmetries...  			No symmetry found.
+		Creating Reaction Rule: _reverse_Rule_7
+			Using symmetry factor = 1
+			Reading Reactant Pattern: RR18_RP1
+				Including Molecule of type: poly_A with local id: RR18_RP1_M1
+				Including Molecule of type: poly_B with local id: RR18_RP1_M2
+				 => Final processed pattern: poly_A(a2!1).poly_B(b3!1)
+			***Identified unbinding of site: poly_A(a2) to site poly_B(b3)
+			Total rate flag = 0
+			Rate Law for Reaction is: Ele
+				...setting elementary rate to be: koff (has value: 100)
+
+		Reading Reaction Rule: RR19 to find symmetries...  			No symmetry found.
+		Creating Reaction Rule: Rule_8
+			Using symmetry factor = 1
+			Reading Reactant Pattern: RR19_RP1
+				Including Molecule of type: poly_A with local id: RR19_RP1_M1
+				 => Final processed pattern: poly_A(a2)
+			Reading Reactant Pattern: RR19_RP2
+				Including Molecule of type: poly_B with local id: RR19_RP2_M1
+				 => Final processed pattern: poly_B(b4)
+			***Identified binding of site: poly_A(a2) to site poly_B(b4)
+			Total rate flag = 0
+			Rate Law for Reaction is: Ele
+				...setting elementary rate to be: kon (has value: 0.028571)
+
+		Reading Reaction Rule: RR20 to find symmetries...  			No symmetry found.
+		Creating Reaction Rule: _reverse_Rule_8
+			Using symmetry factor = 1
+			Reading Reactant Pattern: RR20_RP1
+				Including Molecule of type: poly_A with local id: RR20_RP1_M1
+				Including Molecule of type: poly_B with local id: RR20_RP1_M2
+				 => Final processed pattern: poly_A(a2!1).poly_B(b4!1)
+			***Identified unbinding of site: poly_A(a2) to site poly_B(b4)
+			Total rate flag = 0
+			Rate Law for Reaction is: Ele
+				...setting elementary rate to be: koff (has value: 100)
+
+		Reading Reaction Rule: RR21 to find symmetries...  			No symmetry found.
+		Creating Reaction Rule: Rule_9
+			Using symmetry factor = 1
+			Reading Reactant Pattern: RR21_RP1
+				Including Molecule of type: poly_A with local id: RR21_RP1_M1
+				 => Final processed pattern: poly_A(a3)
+			Reading Reactant Pattern: RR21_RP2
+				Including Molecule of type: poly_B with local id: RR21_RP2_M1
+				 => Final processed pattern: poly_B(b1)
+			***Identified binding of site: poly_A(a3) to site poly_B(b1)
+			Total rate flag = 0
+			Rate Law for Reaction is: Ele
+				...setting elementary rate to be: kon (has value: 0.028571)
+
+		Reading Reaction Rule: RR22 to find symmetries...  			No symmetry found.
+		Creating Reaction Rule: _reverse_Rule_9
+			Using symmetry factor = 1
+			Reading Reactant Pattern: RR22_RP1
+				Including Molecule of type: poly_A with local id: RR22_RP1_M1
+				Including Molecule of type: poly_B with local id: RR22_RP1_M2
+				 => Final processed pattern: poly_A(a3!1).poly_B(b1!1)
+			***Identified unbinding of site: poly_A(a3) to site poly_B(b1)
+			Total rate flag = 0
+			Rate Law for Reaction is: Ele
+				...setting elementary rate to be: koff (has value: 100)
+
+		Reading Reaction Rule: RR23 to find symmetries...  			No symmetry found.
+		Creating Reaction Rule: Rule_10
+			Using symmetry factor = 1
+			Reading Reactant Pattern: RR23_RP1
+				Including Molecule of type: poly_A with local id: RR23_RP1_M1
+				 => Final processed pattern: poly_A(a3)
+			Reading Reactant Pattern: RR23_RP2
+				Including Molecule of type: poly_B with local id: RR23_RP2_M1
+				 => Final processed pattern: poly_B(b2)
+			***Identified binding of site: poly_A(a3) to site poly_B(b2)
+			Total rate flag = 0
+			Rate Law for Reaction is: Ele
+				...setting elementary rate to be: kon (has value: 0.028571)
+
+		Reading Reaction Rule: RR24 to find symmetries...  			No symmetry found.
+		Creating Reaction Rule: _reverse_Rule_10
+			Using symmetry factor = 1
+			Reading Reactant Pattern: RR24_RP1
+				Including Molecule of type: poly_A with local id: RR24_RP1_M1
+				Including Molecule of type: poly_B with local id: RR24_RP1_M2
+				 => Final processed pattern: poly_A(a3!1).poly_B(b2!1)
+			***Identified unbinding of site: poly_A(a3) to site poly_B(b2)
+			Total rate flag = 0
+			Rate Law for Reaction is: Ele
+				...setting elementary rate to be: koff (has value: 100)
+
+		Reading Reaction Rule: RR25 to find symmetries...  			No symmetry found.
+		Creating Reaction Rule: Rule_11
+			Using symmetry factor = 1
+			Reading Reactant Pattern: RR25_RP1
+				Including Molecule of type: poly_A with local id: RR25_RP1_M1
+				 => Final processed pattern: poly_A(a3)
+			Reading Reactant Pattern: RR25_RP2
+				Including Molecule of type: poly_B with local id: RR25_RP2_M1
+				 => Final processed pattern: poly_B(b3)
+			***Identified binding of site: poly_A(a3) to site poly_B(b3)
+			Total rate flag = 0
+			Rate Law for Reaction is: Ele
+				...setting elementary rate to be: kon (has value: 0.028571)
+
+		Reading Reaction Rule: RR26 to find symmetries...  			No symmetry found.
+		Creating Reaction Rule: _reverse_Rule_11
+			Using symmetry factor = 1
+			Reading Reactant Pattern: RR26_RP1
+				Including Molecule of type: poly_A with local id: RR26_RP1_M1
+				Including Molecule of type: poly_B with local id: RR26_RP1_M2
+				 => Final processed pattern: poly_A(a3!1).poly_B(b3!1)
+			***Identified unbinding of site: poly_A(a3) to site poly_B(b3)
+			Total rate flag = 0
+			Rate Law for Reaction is: Ele
+				...setting elementary rate to be: koff (has value: 100)
+
+		Reading Reaction Rule: RR27 to find symmetries...  			No symmetry found.
+		Creating Reaction Rule: Rule_12
+			Using symmetry factor = 1
+			Reading Reactant Pattern: RR27_RP1
+				Including Molecule of type: poly_A with local id: RR27_RP1_M1
+				 => Final processed pattern: poly_A(a3)
+			Reading Reactant Pattern: RR27_RP2
+				Including Molecule of type: poly_B with local id: RR27_RP2_M1
+				 => Final processed pattern: poly_B(b4)
+			***Identified binding of site: poly_A(a3) to site poly_B(b4)
+			Total rate flag = 0
+			Rate Law for Reaction is: Ele
+				...setting elementary rate to be: kon (has value: 0.028571)
+
+		Reading Reaction Rule: RR28 to find symmetries...  			No symmetry found.
+		Creating Reaction Rule: _reverse_Rule_12
+			Using symmetry factor = 1
+			Reading Reactant Pattern: RR28_RP1
+				Including Molecule of type: poly_A with local id: RR28_RP1_M1
+				Including Molecule of type: poly_B with local id: RR28_RP1_M2
+				 => Final processed pattern: poly_A(a3!1).poly_B(b4!1)
+			***Identified unbinding of site: poly_A(a3) to site poly_B(b4)
+			Total rate flag = 0
+			Rate Law for Reaction is: Ele
+				...setting elementary rate to be: koff (has value: 100)
+
+		Reading Reaction Rule: RR29 to find symmetries...  			No symmetry found.
+		Creating Reaction Rule: Rule_13
+			Using symmetry factor = 1
+			Reading Reactant Pattern: RR29_RP1
+				Including Molecule of type: poly_A with local id: RR29_RP1_M1
+				 => Final processed pattern: poly_A(a4)
+			Reading Reactant Pattern: RR29_RP2
+				Including Molecule of type: poly_B with local id: RR29_RP2_M1
+				 => Final processed pattern: poly_B(b1)
+			***Identified binding of site: poly_A(a4) to site poly_B(b1)
+			Total rate flag = 0
+			Rate Law for Reaction is: Ele
+				...setting elementary rate to be: kon (has value: 0.028571)
+
+		Reading Reaction Rule: RR30 to find symmetries...  			No symmetry found.
+		Creating Reaction Rule: _reverse_Rule_13
+			Using symmetry factor = 1
+			Reading Reactant Pattern: RR30_RP1
+				Including Molecule of type: poly_A with local id: RR30_RP1_M1
+				Including Molecule of type: poly_B with local id: RR30_RP1_M2
+				 => Final processed pattern: poly_A(a4!1).poly_B(b1!1)
+			***Identified unbinding of site: poly_A(a4) to site poly_B(b1)
+			Total rate flag = 0
+			Rate Law for Reaction is: Ele
+				...setting elementary rate to be: koff (has value: 100)
+
+		Reading Reaction Rule: RR31 to find symmetries...  			No symmetry found.
+		Creating Reaction Rule: Rule_14
+			Using symmetry factor = 1
+			Reading Reactant Pattern: RR31_RP1
+				Including Molecule of type: poly_A with local id: RR31_RP1_M1
+				 => Final processed pattern: poly_A(a4)
+			Reading Reactant Pattern: RR31_RP2
+				Including Molecule of type: poly_B with local id: RR31_RP2_M1
+				 => Final processed pattern: poly_B(b2)
+			***Identified binding of site: poly_A(a4) to site poly_B(b2)
+			Total rate flag = 0
+			Rate Law for Reaction is: Ele
+				...setting elementary rate to be: kon (has value: 0.028571)
+
+		Reading Reaction Rule: RR32 to find symmetries...  			No symmetry found.
+		Creating Reaction Rule: _reverse_Rule_14
+			Using symmetry factor = 1
+			Reading Reactant Pattern: RR32_RP1
+				Including Molecule of type: poly_A with local id: RR32_RP1_M1
+				Including Molecule of type: poly_B with local id: RR32_RP1_M2
+				 => Final processed pattern: poly_A(a4!1).poly_B(b2!1)
+			***Identified unbinding of site: poly_A(a4) to site poly_B(b2)
+			Total rate flag = 0
+			Rate Law for Reaction is: Ele
+				...setting elementary rate to be: koff (has value: 100)
+
+		Reading Reaction Rule: RR33 to find symmetries...  			No symmetry found.
+		Creating Reaction Rule: Rule_15
+			Using symmetry factor = 1
+			Reading Reactant Pattern: RR33_RP1
+				Including Molecule of type: poly_A with local id: RR33_RP1_M1
+				 => Final processed pattern: poly_A(a4)
+			Reading Reactant Pattern: RR33_RP2
+				Including Molecule of type: poly_B with local id: RR33_RP2_M1
+				 => Final processed pattern: poly_B(b3)
+			***Identified binding of site: poly_A(a4) to site poly_B(b3)
+			Total rate flag = 0
+			Rate Law for Reaction is: Ele
+				...setting elementary rate to be: kon (has value: 0.028571)
+
+		Reading Reaction Rule: RR34 to find symmetries...  			No symmetry found.
+		Creating Reaction Rule: _reverse_Rule_15
+			Using symmetry factor = 1
+			Reading Reactant Pattern: RR34_RP1
+				Including Molecule of type: poly_A with local id: RR34_RP1_M1
+				Including Molecule of type: poly_B with local id: RR34_RP1_M2
+				 => Final processed pattern: poly_A(a4!1).poly_B(b3!1)
+			***Identified unbinding of site: poly_A(a4) to site poly_B(b3)
+			Total rate flag = 0
+			Rate Law for Reaction is: Ele
+				...setting elementary rate to be: koff (has value: 100)
+
+		Reading Reaction Rule: RR35 to find symmetries...  			No symmetry found.
+		Creating Reaction Rule: Rule_16
+			Using symmetry factor = 1
+			Reading Reactant Pattern: RR35_RP1
+				Including Molecule of type: poly_A with local id: RR35_RP1_M1
+				 => Final processed pattern: poly_A(a4)
+			Reading Reactant Pattern: RR35_RP2
+				Including Molecule of type: poly_B with local id: RR35_RP2_M1
+				 => Final processed pattern: poly_B(b4)
+			***Identified binding of site: poly_A(a4) to site poly_B(b4)
+			Total rate flag = 0
+			Rate Law for Reaction is: Ele
+				...setting elementary rate to be: kon (has value: 0.028571)
+
+		Reading Reaction Rule: RR36 to find symmetries...  			No symmetry found.
+		Creating Reaction Rule: _reverse_Rule_16
+			Using symmetry factor = 1
+			Reading Reactant Pattern: RR36_RP1
+				Including Molecule of type: poly_A with local id: RR36_RP1_M1
+				Including Molecule of type: poly_B with local id: RR36_RP1_M2
+				 => Final processed pattern: poly_A(a4!1).poly_B(b4!1)
+			***Identified unbinding of site: poly_A(a4) to site poly_B(b4)
+			Total rate flag = 0
+			Rate Law for Reaction is: Ele
+				...setting elementary rate to be: koff (has value: 100)
+
+	Universal Traversal Limit (UTL) set automatically to: 2
+
+	Complex-scoped local function evaluation is enabled.
+
+preparing simulation...
+
+
+parse appears to be successful.  Here, check your system:
+All System Molecule Types:
+Molecule Type: Source type ID: 0
+   -components ( s )
+  Type I local functions include:  none.
+  Type II local functions include:  none.
+   -has 1 molecules.
+   -has 2 reactions
+   -has 0 molecules observables 
+Molecule Type: poly_A type ID: 1
+   -components ( a1, a2, a3, a4 )
+  Type I local functions include:  none.
+  Type II local functions include:  none.
+   -has 600 molecules.
+   -has 33 reactions
+   -has 2 molecules observables 
+Molecule Type: poly_B type ID: 2
+   -components ( b1, b2, b3, b4 )
+  Type I local functions include:  none.
+  Type II local functions include:  none.
+   -has 600 molecules.
+   -has 17 reactions
+   -has 2 molecules observables 
+
+All System Reactions:
+create_poly_A  (id=0, baseRate=0,  a=0, fired=0 times )
+      -|1 mappings|	Source(s)
+
+decay_poly_A  (id=1, baseRate=0,  a=0, fired=0 times )
+      -|600 mappings|	poly_A(a1,a2,a3,a4)
+
+create_poly_B  (id=2, baseRate=0,  a=0, fired=0 times )
+      -|1 mappings|	Source(s)
+
+decay_poly_B  (id=3, baseRate=0,  a=0, fired=0 times )
+      -|600 mappings|	poly_B(b1,b2,b3,b4)
+
+Rule_1  (id=4, baseRate=0.028571,  a=10285.6, fired=0 times )
+      -|600 mappings|	poly_A(a1)
+      -|600 mappings|	poly_B(b1)
+
+_reverse_Rule_1  (id=5, baseRate=100,  a=0, fired=0 times )
+      -|0 mappings|	poly_A(a1!1).poly_B(b1!1)
+
+Rule_2  (id=6, baseRate=0.028571,  a=10285.6, fired=0 times )
+      -|600 mappings|	poly_A(a1)
+      -|600 mappings|	poly_B(b2)
+
+_reverse_Rule_2  (id=7, baseRate=100,  a=0, fired=0 times )
+      -|0 mappings|	poly_A(a1!1).poly_B(b2!1)
+
+Rule_3  (id=8, baseRate=0.028571,  a=10285.6, fired=0 times )
+      -|600 mappings|	poly_A(a1)
+      -|600 mappings|	poly_B(b3)
+
+_reverse_Rule_3  (id=9, baseRate=100,  a=0, fired=0 times )
+      -|0 mappings|	poly_A(a1!1).poly_B(b3!1)
+
+Rule_4  (id=10, baseRate=0.028571,  a=10285.6, fired=0 times )
+      -|600 mappings|	poly_A(a1)
+      -|600 mappings|	poly_B(b4)
+
+_reverse_Rule_4  (id=11, baseRate=100,  a=0, fired=0 times )
+      -|0 mappings|	poly_A(a1!1).poly_B(b4!1)
+
+Rule_5  (id=12, baseRate=0.028571,  a=10285.6, fired=0 times )
+      -|600 mappings|	poly_A(a2)
+      -|600 mappings|	poly_B(b1)
+
+_reverse_Rule_5  (id=13, baseRate=100,  a=0, fired=0 times )
+      -|0 mappings|	poly_A(a2!1).poly_B(b1!1)
+
+Rule_6  (id=14, baseRate=0.028571,  a=10285.6, fired=0 times )
+      -|600 mappings|	poly_A(a2)
+      -|600 mappings|	poly_B(b2)
+
+_reverse_Rule_6  (id=15, baseRate=100,  a=0, fired=0 times )
+      -|0 mappings|	poly_A(a2!1).poly_B(b2!1)
+
+Rule_7  (id=16, baseRate=0.028571,  a=10285.6, fired=0 times )
+      -|600 mappings|	poly_A(a2)
+      -|600 mappings|	poly_B(b3)
+
+_reverse_Rule_7  (id=17, baseRate=100,  a=0, fired=0 times )
+      -|0 mappings|	poly_A(a2!1).poly_B(b3!1)
+
+Rule_8  (id=18, baseRate=0.028571,  a=10285.6, fired=0 times )
+      -|600 mappings|	poly_A(a2)
+      -|600 mappings|	poly_B(b4)
+
+_reverse_Rule_8  (id=19, baseRate=100,  a=0, fired=0 times )
+      -|0 mappings|	poly_A(a2!1).poly_B(b4!1)
+
+Rule_9  (id=20, baseRate=0.028571,  a=10285.6, fired=0 times )
+      -|600 mappings|	poly_A(a3)
+      -|600 mappings|	poly_B(b1)
+
+_reverse_Rule_9  (id=21, baseRate=100,  a=0, fired=0 times )
+      -|0 mappings|	poly_A(a3!1).poly_B(b1!1)
+
+Rule_10  (id=22, baseRate=0.028571,  a=10285.6, fired=0 times )
+      -|600 mappings|	poly_A(a3)
+      -|600 mappings|	poly_B(b2)
+
+_reverse_Rule_10  (id=23, baseRate=100,  a=0, fired=0 times )
+      -|0 mappings|	poly_A(a3!1).poly_B(b2!1)
+
+Rule_11  (id=24, baseRate=0.028571,  a=10285.6, fired=0 times )
+      -|600 mappings|	poly_A(a3)
+      -|600 mappings|	poly_B(b3)
+
+_reverse_Rule_11  (id=25, baseRate=100,  a=0, fired=0 times )
+      -|0 mappings|	poly_A(a3!1).poly_B(b3!1)
+
+Rule_12  (id=26, baseRate=0.028571,  a=10285.6, fired=0 times )
+      -|600 mappings|	poly_A(a3)
+      -|600 mappings|	poly_B(b4)
+
+_reverse_Rule_12  (id=27, baseRate=100,  a=0, fired=0 times )
+      -|0 mappings|	poly_A(a3!1).poly_B(b4!1)
+
+Rule_13  (id=28, baseRate=0.028571,  a=10285.6, fired=0 times )
+      -|600 mappings|	poly_A(a4)
+      -|600 mappings|	poly_B(b1)
+
+_reverse_Rule_13  (id=29, baseRate=100,  a=0, fired=0 times )
+      -|0 mappings|	poly_A(a4!1).poly_B(b1!1)
+
+Rule_14  (id=30, baseRate=0.028571,  a=10285.6, fired=0 times )
+      -|600 mappings|	poly_A(a4)
+      -|600 mappings|	poly_B(b2)
+
+_reverse_Rule_14  (id=31, baseRate=100,  a=0, fired=0 times )
+      -|0 mappings|	poly_A(a4!1).poly_B(b2!1)
+
+Rule_15  (id=32, baseRate=0.028571,  a=10285.6, fired=0 times )
+      -|600 mappings|	poly_A(a4)
+      -|600 mappings|	poly_B(b3)
+
+_reverse_Rule_15  (id=33, baseRate=100,  a=0, fired=0 times )
+      -|0 mappings|	poly_A(a4!1).poly_B(b3!1)
+
+Rule_16  (id=34, baseRate=0.028571,  a=10285.6, fired=0 times )
+      -|600 mappings|	poly_A(a4)
+      -|600 mappings|	poly_B(b4)
+
+_reverse_Rule_16  (id=35, baseRate=100,  a=0, fired=0 times )
+      -|0 mappings|	poly_A(a4!1).poly_B(b4!1)
+
+
+Time	tot_poly_A	free_poly_A	tot_poly_B	free_poly_B
+0	600	600	600	600
+
+System Global Functions: 
+
+System Composite Functions: 
+
+System Local Functions: 
+-------------------------
+
+
+
+Equilibrating for :0s.  Please wait.
+
+simulating system for: 5.000000e-01 second(s).
+
+Sim time: 0.000000e+00	CPU time (total): 0.000000e+00s	 events (step): 0
+Sim time: 5.000000e-03	CPU time (total): 1.000000e-02s	 events (step): 744
+Sim time: 1.000000e-02	CPU time (total): 3.000000e-02s	 events (step): 796
+Sim time: 1.500000e-02	CPU time (total): 4.000000e-02s	 events (step): 786
+Sim time: 2.000000e-02	CPU time (total): 6.000000e-02s	 events (step): 738
+Sim time: 2.500000e-02	CPU time (total): 8.000000e-02s	 events (step): 770
+Sim time: 3.000000e-02	CPU time (total): 9.000000e-02s	 events (step): 736
+Sim time: 3.500000e-02	CPU time (total): 1.100000e-01s	 events (step): 783
+Sim time: 4.000000e-02	CPU time (total): 1.200000e-01s	 events (step): 743
+Sim time: 4.500000e-02	CPU time (total): 1.300000e-01s	 events (step): 700
+Sim time: 5.000000e-02	CPU time (total): 1.400000e-01s	 events (step): 768
+Sim time: 5.500000e-02	CPU time (total): 1.500000e-01s	 events (step): 730
+Sim time: 6.000000e-02	CPU time (total): 1.600000e-01s	 events (step): 728
+Sim time: 6.500000e-02	CPU time (total): 1.700000e-01s	 events (step): 758
+Sim time: 7.000000e-02	CPU time (total): 1.800000e-01s	 events (step): 768
+Sim time: 7.500000e-02	CPU time (total): 1.900000e-01s	 events (step): 812
+Sim time: 8.000000e-02	CPU time (total): 2.000000e-01s	 events (step): 743
+Sim time: 8.500000e-02	CPU time (total): 2.100000e-01s	 events (step): 766
+Sim time: 9.000000e-02	CPU time (total): 2.200000e-01s	 events (step): 788
+Sim time: 9.500000e-02	CPU time (total): 2.300000e-01s	 events (step): 759
+Sim time: 1.000000e-01	CPU time (total): 2.400000e-01s	 events (step): 783
+Sim time: 1.050000e-01	CPU time (total): 2.500000e-01s	 events (step): 742
+Sim time: 1.100000e-01	CPU time (total): 2.600000e-01s	 events (step): 757
+Sim time: 1.150000e-01	CPU time (total): 2.700000e-01s	 events (step): 757
+Sim time: 1.200000e-01	CPU time (total): 2.800000e-01s	 events (step): 795
+Sim time: 1.250000e-01	CPU time (total): 2.900000e-01s	 events (step): 823
+Sim time: 1.300000e-01	CPU time (total): 3.000000e-01s	 events (step): 758
+Sim time: 1.350000e-01	CPU time (total): 3.100000e-01s	 events (step): 751
+Sim time: 1.400000e-01	CPU time (total): 3.200000e-01s	 events (step): 750
+Sim time: 1.450000e-01	CPU time (total): 3.300000e-01s	 events (step): 722
+Sim time: 1.500000e-01	CPU time (total): 3.400000e-01s	 events (step): 790
+Sim time: 1.550000e-01	CPU time (total): 3.500000e-01s	 events (step): 752
+Sim time: 1.600000e-01	CPU time (total): 3.600000e-01s	 events (step): 765
+Sim time: 1.650000e-01	CPU time (total): 3.700000e-01s	 events (step): 746
+Sim time: 1.700000e-01	CPU time (total): 3.800000e-01s	 events (step): 714
+Sim time: 1.750000e-01	CPU time (total): 3.900000e-01s	 events (step): 807
+Sim time: 1.800000e-01	CPU time (total): 4.000000e-01s	 events (step): 778
+Sim time: 1.850000e-01	CPU time (total): 4.100000e-01s	 events (step): 732
+Sim time: 1.900000e-01	CPU time (total): 4.200000e-01s	 events (step): 811
+Sim time: 1.950000e-01	CPU time (total): 4.300000e-01s	 events (step): 784
+Sim time: 2.000000e-01	CPU time (total): 4.400000e-01s	 events (step): 775
+Sim time: 2.050000e-01	CPU time (total): 4.500000e-01s	 events (step): 701
+Sim time: 2.100000e-01	CPU time (total): 4.600000e-01s	 events (step): 773
+Sim time: 2.150000e-01	CPU time (total): 4.700000e-01s	 events (step): 776
+Sim time: 2.200000e-01	CPU time (total): 4.800000e-01s	 events (step): 769
+Sim time: 2.250000e-01	CPU time (total): 5.000000e-01s	 events (step): 805
+Sim time: 2.300000e-01	CPU time (total): 5.000000e-01s	 events (step): 734
+Sim time: 2.350000e-01	CPU time (total): 5.100000e-01s	 events (step): 729
+Sim time: 2.400000e-01	CPU time (total): 5.300000e-01s	 events (step): 805
+Sim time: 2.450000e-01	CPU time (total): 5.400000e-01s	 events (step): 808
+Sim time: 2.500000e-01	CPU time (total): 5.500000e-01s	 events (step): 750
+Sim time: 2.550000e-01	CPU time (total): 5.600000e-01s	 events (step): 766
+Sim time: 2.600000e-01	CPU time (total): 5.700000e-01s	 events (step): 763
+Sim time: 2.650000e-01	CPU time (total): 5.800000e-01s	 events (step): 784
+Sim time: 2.700000e-01	CPU time (total): 5.900000e-01s	 events (step): 765
+Sim time: 2.750000e-01	CPU time (total): 6.000000e-01s	 events (step): 765
+Sim time: 2.800000e-01	CPU time (total): 6.100000e-01s	 events (step): 731
+Sim time: 2.850000e-01	CPU time (total): 6.200000e-01s	 events (step): 747
+Sim time: 2.900000e-01	CPU time (total): 6.300000e-01s	 events (step): 770
+Sim time: 2.950000e-01	CPU time (total): 6.400000e-01s	 events (step): 800
+Sim time: 3.000000e-01	CPU time (total): 6.500000e-01s	 events (step): 766
+Sim time: 3.050000e-01	CPU time (total): 6.600000e-01s	 events (step): 789
+Sim time: 3.100000e-01	CPU time (total): 6.700000e-01s	 events (step): 762
+Sim time: 3.150000e-01	CPU time (total): 6.800000e-01s	 events (step): 715
+Sim time: 3.200000e-01	CPU time (total): 6.900000e-01s	 events (step): 745
+Sim time: 3.250000e-01	CPU time (total): 7.000000e-01s	 events (step): 786
+Sim time: 3.300000e-01	CPU time (total): 7.100000e-01s	 events (step): 745
+Sim time: 3.350000e-01	CPU time (total): 7.200000e-01s	 events (step): 851
+Sim time: 3.400000e-01	CPU time (total): 7.300000e-01s	 events (step): 735
+Sim time: 3.450000e-01	CPU time (total): 7.400000e-01s	 events (step): 771
+Sim time: 3.500000e-01	CPU time (total): 7.500000e-01s	 events (step): 820
+Sim time: 3.550000e-01	CPU time (total): 7.600000e-01s	 events (step): 807
+Sim time: 3.600000e-01	CPU time (total): 7.700000e-01s	 events (step): 767
+Sim time: 3.650000e-01	CPU time (total): 7.900000e-01s	 events (step): 745
+Sim time: 3.700000e-01	CPU time (total): 8.000000e-01s	 events (step): 803
+Sim time: 3.750000e-01	CPU time (total): 8.100000e-01s	 events (step): 753
+Sim time: 3.800000e-01	CPU time (total): 8.200000e-01s	 events (step): 789
+Sim time: 3.850000e-01	CPU time (total): 8.200000e-01s	 events (step): 709
+Sim time: 3.900000e-01	CPU time (total): 8.300000e-01s	 events (step): 708
+Sim time: 3.950000e-01	CPU time (total): 8.400000e-01s	 events (step): 767
+Sim time: 4.000000e-01	CPU time (total): 8.500000e-01s	 events (step): 751
+Sim time: 4.050000e-01	CPU time (total): 8.600000e-01s	 events (step): 742
+Sim time: 4.100000e-01	CPU time (total): 8.700000e-01s	 events (step): 755
+Sim time: 4.150000e-01	CPU time (total): 8.800000e-01s	 events (step): 752
+Sim time: 4.200000e-01	CPU time (total): 8.900000e-01s	 events (step): 748
+Sim time: 4.250000e-01	CPU time (total): 9.000000e-01s	 events (step): 778
+Sim time: 4.300000e-01	CPU time (total): 9.100000e-01s	 events (step): 763
+Sim time: 4.350000e-01	CPU time (total): 9.200000e-01s	 events (step): 800
+Sim time: 4.400000e-01	CPU time (total): 9.300000e-01s	 events (step): 754
+Sim time: 4.450000e-01	CPU time (total): 9.500000e-01s	 events (step): 776
+Sim time: 4.500000e-01	CPU time (total): 9.600000e-01s	 events (step): 805
+Sim time: 4.550000e-01	CPU time (total): 9.700000e-01s	 events (step): 713
+Sim time: 4.600000e-01	CPU time (total): 9.800000e-01s	 events (step): 739
+Sim time: 4.650000e-01	CPU time (total): 9.900000e-01s	 events (step): 779
+Sim time: 4.700000e-01	CPU time (total): 1.000000e+00s	 events (step): 794
+Sim time: 4.750000e-01	CPU time (total): 1.010000e+00s	 events (step): 806
+Sim time: 4.800000e-01	CPU time (total): 1.020000e+00s	 events (step): 724
+Sim time: 4.850000e-01	CPU time (total): 1.030000e+00s	 events (step): 763
+Sim time: 4.900000e-01	CPU time (total): 1.040000e+00s	 events (step): 771
+Sim time: 4.950000e-01	CPU time (total): 1.050000e+00s	 events (step): 756
+Sim time: 4.950000e-01	CPU time (total): 1.060000e+00s	 events (step): 687
+
+   You just simulated 76339 reactions in 1.060000e+00s
+   ( 7.201792e+04 reactions/sec, 1.388543e-05 CPU seconds/event )
+   Null events: 322   (1.394425e-05 CPU seconds/non-null event )
+
+
+saving list of final molecular species...
+
+
+All System Reactions:
+create_poly_A  (id=0, baseRate=0,  a=0, fired=0 times )
+      -|1 mappings|	Source(s)
+
+decay_poly_A  (id=1, baseRate=0,  a=0, fired=0 times )
+      -|113 mappings|	poly_A(a1,a2,a3,a4)
+
+create_poly_B  (id=2, baseRate=0,  a=0, fired=0 times )
+      -|1 mappings|	Source(s)
+
+decay_poly_B  (id=3, baseRate=0,  a=0, fired=0 times )
+      -|124 mappings|	poly_B(b1,b2,b3,b4)
+
+Rule_1  (id=4, baseRate=0.028571,  a=4605.7, fired=2424 times )
+      -|402 mappings|	poly_A(a1)
+      -|401 mappings|	poly_B(b1)
+
+_reverse_Rule_1  (id=5, baseRate=100,  a=4800, fired=2363 times )
+      -|48 mappings|	poly_A(a1!1).poly_B(b1!1)
+
+Rule_2  (id=6, baseRate=0.028571,  a=4617.19, fired=2453 times )
+      -|402 mappings|	poly_A(a1)
+      -|402 mappings|	poly_B(b2)
+
+_reverse_Rule_2  (id=7, baseRate=100,  a=4800, fired=2387 times )
+      -|48 mappings|	poly_A(a1!1).poly_B(b2!1)
+
+Rule_3  (id=8, baseRate=0.028571,  a=4697.59, fired=2503 times )
+      -|402 mappings|	poly_A(a1)
+      -|409 mappings|	poly_B(b3)
+
+_reverse_Rule_3  (id=9, baseRate=100,  a=4800, fired=2427 times )
+      -|48 mappings|	poly_A(a1!1).poly_B(b3!1)
+
+Rule_4  (id=10, baseRate=0.028571,  a=4536.79, fired=2360 times )
+      -|402 mappings|	poly_A(a1)
+      -|395 mappings|	poly_B(b4)
+
+_reverse_Rule_4  (id=11, baseRate=100,  a=5400, fired=2285 times )
+      -|54 mappings|	poly_A(a1!1).poly_B(b4!1)
+
+Rule_5  (id=12, baseRate=0.028571,  a=4800.47, fired=2435 times )
+      -|419 mappings|	poly_A(a2)
+      -|401 mappings|	poly_B(b1)
+
+_reverse_Rule_5  (id=13, baseRate=100,  a=5000, fired=2358 times )
+      -|50 mappings|	poly_A(a2!1).poly_B(b1!1)
+
+Rule_6  (id=14, baseRate=0.028571,  a=4812.44, fired=2434 times )
+      -|419 mappings|	poly_A(a2)
+      -|402 mappings|	poly_B(b2)
+
+_reverse_Rule_6  (id=15, baseRate=100,  a=4600, fired=2368 times )
+      -|46 mappings|	poly_A(a2!1).poly_B(b2!1)
+
+Rule_7  (id=16, baseRate=0.028571,  a=4896.24, fired=2403 times )
+      -|419 mappings|	poly_A(a2)
+      -|409 mappings|	poly_B(b3)
+
+_reverse_Rule_7  (id=17, baseRate=100,  a=3700, fired=2339 times )
+      -|37 mappings|	poly_A(a2!1).poly_B(b3!1)
+
+Rule_8  (id=18, baseRate=0.028571,  a=4728.64, fired=2378 times )
+      -|419 mappings|	poly_A(a2)
+      -|395 mappings|	poly_B(b4)
+
+_reverse_Rule_8  (id=19, baseRate=100,  a=4800, fired=2304 times )
+      -|48 mappings|	poly_A(a2!1).poly_B(b4!1)
+
+Rule_9  (id=20, baseRate=0.028571,  a=4433.85, fired=2442 times )
+      -|387 mappings|	poly_A(a3)
+      -|401 mappings|	poly_B(b1)
+
+_reverse_Rule_9  (id=21, baseRate=100,  a=5400, fired=2370 times )
+      -|54 mappings|	poly_A(a3!1).poly_B(b1!1)
+
+Rule_10  (id=22, baseRate=0.028571,  a=4444.9, fired=2472 times )
+      -|387 mappings|	poly_A(a3)
+      -|402 mappings|	poly_B(b2)
+
+_reverse_Rule_10  (id=23, baseRate=100,  a=5400, fired=2399 times )
+      -|54 mappings|	poly_A(a3!1).poly_B(b2!1)
+
+Rule_11  (id=24, baseRate=0.028571,  a=4522.3, fired=2411 times )
+      -|387 mappings|	poly_A(a3)
+      -|409 mappings|	poly_B(b3)
+
+_reverse_Rule_11  (id=25, baseRate=100,  a=5200, fired=2342 times )
+      -|52 mappings|	poly_A(a3!1).poly_B(b3!1)
+
+Rule_12  (id=26, baseRate=0.028571,  a=4367.51, fired=2406 times )
+      -|387 mappings|	poly_A(a3)
+      -|395 mappings|	poly_B(b4)
+
+_reverse_Rule_12  (id=27, baseRate=100,  a=5300, fired=2344 times )
+      -|53 mappings|	poly_A(a3!1).poly_B(b4!1)
+
+Rule_13  (id=28, baseRate=0.028571,  a=4571.33, fired=2398 times )
+      -|399 mappings|	poly_A(a4)
+      -|401 mappings|	poly_B(b1)
+
+_reverse_Rule_13  (id=29, baseRate=100,  a=4700, fired=2335 times )
+      -|47 mappings|	poly_A(a4!1).poly_B(b1!1)
+
+Rule_14  (id=30, baseRate=0.028571,  a=4582.73, fired=2386 times )
+      -|399 mappings|	poly_A(a4)
+      -|402 mappings|	poly_B(b2)
+
+_reverse_Rule_14  (id=31, baseRate=100,  a=5000, fired=2321 times )
+      -|50 mappings|	poly_A(a4!1).poly_B(b2!1)
+
+Rule_15  (id=32, baseRate=0.028571,  a=4662.53, fired=2402 times )
+      -|399 mappings|	poly_A(a4)
+      -|409 mappings|	poly_B(b3)
+
+_reverse_Rule_15  (id=33, baseRate=100,  a=5400, fired=2326 times )
+      -|54 mappings|	poly_A(a4!1).poly_B(b3!1)
+
+Rule_16  (id=34, baseRate=0.028571,  a=4502.93, fired=2420 times )
+      -|399 mappings|	poly_A(a4)
+      -|395 mappings|	poly_B(b4)
+
+_reverse_Rule_16  (id=35, baseRate=100,  a=5000, fired=2344 times )
+      -|50 mappings|	poly_A(a4!1).poly_B(b4!1)
+
+
+
+Time	tot_poly_A	free_poly_A	tot_poly_B	free_poly_B
+0.500007	600	113	600	124
+
+done.  Total CPU time: 1.08s
+
