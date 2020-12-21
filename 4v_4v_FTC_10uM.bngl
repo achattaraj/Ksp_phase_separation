@@ -1,0 +1,58 @@
+begin model
+
+begin parameters
+kd	3500
+kon	0.028571
+koff	100
+end parameters
+
+begin molecule types
+Source(s)
+Sink(s)
+poly_SH3(s1,s2,s3,s4)
+poly_PRM(p1,p2,p3,p4)
+end molecule types
+
+begin seed species
+1 Source(s) 1.0
+2 Sink(s) 0.0
+3 poly_SH3(s1,s2,s3,s4) 100
+4 poly_PRM(p1,p2,p3,p4) 100
+end seed species
+
+begin observables
+Molecules tot_poly_SH3 poly_SH3()
+Molecules free_poly_SH3 poly_SH3(s1,s2,s3,s4)
+Molecules tot_poly_PRM poly_PRM()
+Molecules free_poly_PRM poly_PRM(p1,p2,p3,p4)
+end observables
+
+begin functions
+end functions
+
+begin reaction rules
+create_poly_SH3: Source(s) -> Source(s) + poly_SH3(s1,s2,s3,s4)	0
+decay_poly_SH3:  poly_SH3(s1,s2,s3,s4) -> 0	0
+create_poly_PRM: Source(s) -> Source(s) + poly_PRM(p1,p2,p3,p4)	0
+decay_poly_PRM:  poly_PRM(p1,p2,p3,p4) -> 0	0
+Rule_1:  poly_SH3(s1) + poly_PRM(p1) <-> poly_SH3(s1!1).poly_PRM(p1!1)  kon, koff
+Rule_2:  poly_SH3(s1) + poly_PRM(p2) <-> poly_SH3(s1!1).poly_PRM(p2!1)  kon, koff
+Rule_3:  poly_SH3(s1) + poly_PRM(p3) <-> poly_SH3(s1!1).poly_PRM(p3!1)  kon, koff
+Rule_4:  poly_SH3(s1) + poly_PRM(p4) <-> poly_SH3(s1!1).poly_PRM(p4!1)  kon, koff
+Rule_5:  poly_SH3(s2) + poly_PRM(p1) <-> poly_SH3(s2!1).poly_PRM(p1!1)  kon, koff
+Rule_6:  poly_SH3(s2) + poly_PRM(p2) <-> poly_SH3(s2!1).poly_PRM(p2!1)  kon, koff
+Rule_7:  poly_SH3(s2) + poly_PRM(p3) <-> poly_SH3(s2!1).poly_PRM(p3!1)  kon, koff
+Rule_8:  poly_SH3(s2) + poly_PRM(p4) <-> poly_SH3(s2!1).poly_PRM(p4!1)  kon, koff
+Rule_9:  poly_SH3(s3) + poly_PRM(p1) <-> poly_SH3(s3!1).poly_PRM(p1!1)  kon, koff
+Rule_10:  poly_SH3(s3) + poly_PRM(p2) <-> poly_SH3(s3!1).poly_PRM(p2!1)  kon, koff
+Rule_11:  poly_SH3(s3) + poly_PRM(p3) <-> poly_SH3(s3!1).poly_PRM(p3!1)  kon, koff
+Rule_12:  poly_SH3(s3) + poly_PRM(p4) <-> poly_SH3(s3!1).poly_PRM(p4!1)  kon, koff
+Rule_13:  poly_SH3(s4) + poly_PRM(p1) <-> poly_SH3(s4!1).poly_PRM(p1!1)  kon, koff
+Rule_14:  poly_SH3(s4) + poly_PRM(p2) <-> poly_SH3(s4!1).poly_PRM(p2!1)  kon, koff
+Rule_15:  poly_SH3(s4) + poly_PRM(p3) <-> poly_SH3(s4!1).poly_PRM(p3!1)  kon, koff
+Rule_16:  poly_SH3(s4) + poly_PRM(p4) <-> poly_SH3(s4!1).poly_PRM(p4!1)  kon, koff
+end reaction rules
+
+end model
+
+simulate_nf({t_end=>0.005,n_steps=>10, param=>"-v -utl 2"})
