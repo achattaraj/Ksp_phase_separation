@@ -1,0 +1,53 @@
+begin model
+
+begin parameters
+kd	3500
+kon	0.028571
+koff	100
+end parameters
+
+begin molecule types
+Source(s)
+poly_A(a1,a2,a3,a4)
+poly_B(b1,b2,b3,b4)
+end molecule types
+
+begin seed species
+1 Source(s) 1.0
+3 poly_A(a1,a2,a3,a4) 600
+4 poly_B(b1,b2,b3,b4) 600
+end seed species
+
+begin observables
+Molecules tot_poly_A poly_A()
+Molecules free_poly_A poly_A(a1,a2,a3,a4)
+Molecules tot_poly_B poly_B()
+Molecules free_poly_B poly_B(b1,b2,b3,b4)
+end observables
+
+begin reaction rules
+create_poly_A: Source(s) -> Source(s) + poly_A(a1,a2,a3,a4)	0
+decay_poly_A:  poly_A(a1,a2,a3,a4) -> 0	0
+create_poly_B: Source(s) -> Source(s) + poly_B(b1,b2,b3,b4)	0
+decay_poly_B:  poly_B(b1,b2,b3,b4) -> 0	0
+Rule_1:  poly_A(a1) + poly_B(b1) <-> poly_A(a1!1).poly_B(b1!1)  kon, koff
+Rule_2:  poly_A(a1) + poly_B(b2) <-> poly_A(a1!1).poly_B(b2!1)  kon, koff
+Rule_3:  poly_A(a1) + poly_B(b3) <-> poly_A(a1!1).poly_B(b3!1)  kon, koff
+Rule_4:  poly_A(a1) + poly_B(b4) <-> poly_A(a1!1).poly_B(b4!1)  kon, koff
+Rule_5:  poly_A(a2) + poly_B(b1) <-> poly_A(a2!1).poly_B(b1!1)  kon, koff
+Rule_6:  poly_A(a2) + poly_B(b2) <-> poly_A(a2!1).poly_B(b2!1)  kon, koff
+Rule_7:  poly_A(a2) + poly_B(b3) <-> poly_A(a2!1).poly_B(b3!1)  kon, koff
+Rule_8:  poly_A(a2) + poly_B(b4) <-> poly_A(a2!1).poly_B(b4!1)  kon, koff
+Rule_9:  poly_A(a3) + poly_B(b1) <-> poly_A(a3!1).poly_B(b1!1)  kon, koff
+Rule_10:  poly_A(a3) + poly_B(b2) <-> poly_A(a3!1).poly_B(b2!1)  kon, koff
+Rule_11:  poly_A(a3) + poly_B(b3) <-> poly_A(a3!1).poly_B(b3!1)  kon, koff
+Rule_12:  poly_A(a3) + poly_B(b4) <-> poly_A(a3!1).poly_B(b4!1)  kon, koff
+Rule_13:  poly_A(a4) + poly_B(b1) <-> poly_A(a4!1).poly_B(b1!1)  kon, koff
+Rule_14:  poly_A(a4) + poly_B(b2) <-> poly_A(a4!1).poly_B(b2!1)  kon, koff
+Rule_15:  poly_A(a4) + poly_B(b3) <-> poly_A(a4!1).poly_B(b3!1)  kon, koff
+Rule_16:  poly_A(a4) + poly_B(b4) <-> poly_A(a4!1).poly_B(b4!1)  kon, koff
+end reaction rules
+
+end model
+
+simulate_nf({t_end=>0.5,n_steps=>100, param=>"-v -utl 2"})
