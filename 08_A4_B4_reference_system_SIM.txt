@@ -1,0 +1,224 @@
+*** TIME INFORMATION ***
+Total time: 5.00E-2
+dt: 1.00E-8
+dt_spring: 1.00E-9
+dt_data: 5.00E-4
+dt_image: 5.00E-4
+
+*** SYSTEM INFORMATION ***
+L_x: 0.1
+L_y: 0.1
+L_z_out: 0.01
+L_z_in: 0.1
+Partition Nx: 10
+Partition Ny: 10
+Partition Nz: 11
+
+*** MOLECULES ***
+
+MOLECULE: "poly_A" Intracellular Number 100 Site_Types 2 Total_Sites 10 Total_Links 9 is2D false
+{
+     TYPE: Name "A" Radius 1.50000 D 2.000 Color MAGENTA STATES "State0" 
+     TYPE: Name "a_linker" Radius 0.75000 D 2.000 Color ORANGE STATES "State0" 
+
+     SITE 0 : Intracellular : Initial State 'State0'
+          TYPE: Name "A" Radius 1.50000 D 2.000 Color MAGENTA STATES "State0" 
+          x 0.00000 y 41.50000 z 49.50000 
+     SITE 1 : Intracellular : Initial State 'State0'
+          TYPE: Name "A" Radius 1.50000 D 2.000 Color MAGENTA STATES "State0" 
+          x 0.00000 y 41.50000 z 58.50000 
+     SITE 2 : Intracellular : Initial State 'State0'
+          TYPE: Name "A" Radius 1.50000 D 2.000 Color MAGENTA STATES "State0" 
+          x 0.00000 y 41.50000 z 67.50000 
+     SITE 3 : Intracellular : Initial State 'State0'
+          TYPE: Name "a_linker" Radius 0.75000 D 2.000 Color ORANGE STATES "State0" 
+          x 0.00000 y 41.50000 z 52.50000 
+     SITE 4 : Intracellular : Initial State 'State0'
+          TYPE: Name "a_linker" Radius 0.75000 D 2.000 Color ORANGE STATES "State0" 
+          x 0.00000 y 41.50000 z 55.50000 
+     SITE 5 : Intracellular : Initial State 'State0'
+          TYPE: Name "a_linker" Radius 0.75000 D 2.000 Color ORANGE STATES "State0" 
+          x 0.00000 y 41.50000 z 61.50000 
+     SITE 6 : Intracellular : Initial State 'State0'
+          TYPE: Name "a_linker" Radius 0.75000 D 2.000 Color ORANGE STATES "State0" 
+          x 0.00000 y 41.50000 z 64.50000 
+     SITE 7 : Intracellular : Initial State 'State0'
+          TYPE: Name "a_linker" Radius 0.75000 D 2.000 Color ORANGE STATES "State0" 
+          x 0.00000 y 41.50000 z 70.50000 
+     SITE 8 : Intracellular : Initial State 'State0'
+          TYPE: Name "a_linker" Radius 0.75000 D 2.000 Color ORANGE STATES "State0" 
+          x 0.00000 y 41.50000 z 73.50000 
+     SITE 9 : Intracellular : Initial State 'State0'
+          TYPE: Name "A" Radius 1.50000 D 2.000 Color MAGENTA STATES "State0" 
+          x 0.00000 y 41.50000 z 76.50000 
+
+     LINK: Site 0 ::: Site 3
+     LINK: Site 3 ::: Site 4
+     LINK: Site 4 ::: Site 1
+     LINK: Site 1 ::: Site 5
+     LINK: Site 5 ::: Site 6
+     LINK: Site 6 ::: Site 2
+     LINK: Site 2 ::: Site 7
+     LINK: Site 7 ::: Site 8
+     LINK: Site 8 ::: Site 9
+
+     Initial_Positions: Random
+}
+
+MOLECULE: "poly_B" Intracellular Number 100 Site_Types 2 Total_Sites 10 Total_Links 9 is2D false
+{
+     TYPE: Name "B" Radius 1.50000 D 2.000 Color GREEN STATES "State0" 
+     TYPE: Name "b_linker" Radius 0.75000 D 2.000 Color PINK STATES "State0" 
+
+     SITE 0 : Intracellular : Initial State 'State0'
+          TYPE: Name "B" Radius 1.50000 D 2.000 Color GREEN STATES "State0" 
+          x 0.00000 y 34.00000 z 38.25000 
+     SITE 1 : Intracellular : Initial State 'State0'
+          TYPE: Name "B" Radius 1.50000 D 2.000 Color GREEN STATES "State0" 
+          x 0.00000 y 34.00000 z 47.25000 
+     SITE 2 : Intracellular : Initial State 'State0'
+          TYPE: Name "B" Radius 1.50000 D 2.000 Color GREEN STATES "State0" 
+          x 0.00000 y 34.00000 z 56.25000 
+     SITE 3 : Intracellular : Initial State 'State0'
+          TYPE: Name "b_linker" Radius 0.75000 D 2.000 Color PINK STATES "State0" 
+          x 0.00000 y 34.00000 z 44.25000 
+     SITE 4 : Intracellular : Initial State 'State0'
+          TYPE: Name "b_linker" Radius 0.75000 D 2.000 Color PINK STATES "State0" 
+          x 0.00000 y 34.00000 z 53.25000 
+     SITE 5 : Intracellular : Initial State 'State0'
+          TYPE: Name "b_linker" Radius 0.75000 D 2.000 Color PINK STATES "State0" 
+          x 0.00000 y 34.00000 z 59.25000 
+     SITE 6 : Intracellular : Initial State 'State0'
+          TYPE: Name "B" Radius 1.50000 D 2.000 Color GREEN STATES "State0" 
+          x 0.00000 y 34.00000 z 65.25000 
+     SITE 7 : Intracellular : Initial State 'State0'
+          TYPE: Name "b_linker" Radius 0.75000 D 2.000 Color PINK STATES "State0" 
+          x 0.00000 y 34.00000 z 41.25000 
+     SITE 8 : Intracellular : Initial State 'State0'
+          TYPE: Name "b_linker" Radius 0.75000 D 2.000 Color PINK STATES "State0" 
+          x 0.00000 y 34.00000 z 50.25000 
+     SITE 9 : Intracellular : Initial State 'State0'
+          TYPE: Name "b_linker" Radius 0.75000 D 2.000 Color PINK STATES "State0" 
+          x 0.00000 y 34.00000 z 62.25000 
+
+     LINK: Site 0 ::: Site 7
+     LINK: Site 7 ::: Site 3
+     LINK: Site 3 ::: Site 1
+     LINK: Site 1 ::: Site 8
+     LINK: Site 8 ::: Site 4
+     LINK: Site 4 ::: Site 2
+     LINK: Site 2 ::: Site 5
+     LINK: Site 5 ::: Site 9
+     LINK: Site 9 ::: Site 6
+
+     Initial_Positions: Random
+}
+
+*** MOLECULE FILES ***
+
+MOLECULE: poly_A null
+MOLECULE: poly_B null
+
+*** CREATION/DECAY REACTIONS ***
+
+'poly_A' : kcreate 0.0 kdecay 0.0
+'poly_B' : kcreate 0.0 kdecay 0.0
+
+*** STATE TRANSITION REACTIONS ***
+
+
+*** ALLOSTERIC REACTIONS ***
+
+
+*** BIMOLECULAR BINDING REACTIONS ***
+
+'A_B_binding'       'poly_A' : 'A' : 'State0'  +  'poly_B' : 'B' : 'State0'  kon 20.0  koff 7000.0  Bond_Length 0.5
+
+*** MOLECULE COUNTERS ***
+
+'poly_A' : Measure Total Free Bound 
+'poly_B' : Measure Total Free Bound 
+
+*** STATE COUNTERS ***
+
+'poly_A' : 'A' : 'State0' : Measure Total Free Bound 
+'poly_A' : 'a_linker' : 'State0' : Measure Total Free Bound 
+'poly_B' : 'B' : 'State0' : Measure Total Free Bound 
+'poly_B' : 'b_linker' : 'State0' : Measure Total Free Bound 
+
+*** BOND COUNTERS ***
+
+'A_B_binding' : Counted
+
+*** SITE PROPERTY COUNTERS ***
+
+'poly_A' Site 0 :  Track Properties true
+'poly_A' Site 1 :  Track Properties true
+'poly_A' Site 2 :  Track Properties true
+'poly_A' Site 3 :  Track Properties true
+'poly_A' Site 4 :  Track Properties true
+'poly_A' Site 5 :  Track Properties true
+'poly_A' Site 6 :  Track Properties true
+'poly_A' Site 7 :  Track Properties true
+'poly_A' Site 8 :  Track Properties true
+'poly_A' Site 9 :  Track Properties true
+'poly_B' Site 0 :  Track Properties true
+'poly_B' Site 1 :  Track Properties true
+'poly_B' Site 2 :  Track Properties true
+'poly_B' Site 3 :  Track Properties true
+'poly_B' Site 4 :  Track Properties true
+'poly_B' Site 5 :  Track Properties true
+'poly_B' Site 6 :  Track Properties true
+'poly_B' Site 7 :  Track Properties true
+'poly_B' Site 8 :  Track Properties true
+'poly_B' Site 9 :  Track Properties true
+
+*** CLUSTER COUNTERS ***
+
+Track_Clusters: true
+
+*** SYSTEM ANNOTATIONS ***
+
+
+*** MOLECULE ANNOTATIONS ***
+
+Annotation: 'poly_A'
+{
+}
+
+Annotation: 'poly_B'
+{
+}
+
+*** REACTION ANNOTATIONS ***
+
+Annotation: 'A_B_binding'
+{
+}
+
+
+*** SIMULATION STATE ***
+
+Runs: 100
+Parallel: false
+SimultaneousRuns: 1
+Aborted: false
+IsRunning: false
+HasResults: false
+RunOnCluster: false
+
+*** PROCESSOR FILES ***
+
+MoleculeAverages: 'null'
+BondAverages: 'null'
+StateAverages: 'null'
+RunningTimes: 'null'
+
+*** RAW DATA FILES ***
+
+'null'
+
+*** SITE DATA FILES ***
+
+null
+
