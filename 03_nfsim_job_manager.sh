@@ -27,4 +27,4 @@ utl=2
 
 module load BioNetGen/2.5.0
 
-NFsim "-xml" "$inpath/$sysname.xml" "-sim" "$t_end" "-v" "-seed" "$SLURM_ARRAY_TASK_ID" "-o" "$outpath/Run_$SLURM_ARRAY_TASK_ID.gdat" "-ss" "$outpath/Run_$SLURM_ARRAY_TASK_ID.species" "-cb" "-oSteps" "$numSteps" 1>"$stdpath/Run_$SLURM_ARRAY_TASK_ID.out" 2>"$stdpath/Run_$SLURM_ARRAY_TASK_ID.err"
+NFsim "-xml" "$inpath/$sysname.xml" "-sim" "$t_end" "-v" "-seed" "$SLURM_ARRAY_TASK_ID" "-o" "$outpath/Run_$SLURM_ARRAY_TASK_ID.gdat" "-ss" "$outpath/Run_$SLURM_ARRAY_TASK_ID.species" "-utl" "$utl" "-cb" "-oSteps" "$numSteps" 1>"$stdpath/Run_$SLURM_ARRAY_TASK_ID.out" 2>"$stdpath/Run_$SLURM_ARRAY_TASK_ID.err"
