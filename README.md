@@ -14,5 +14,7 @@
 <ul>
     <li> SpringSaLaD models are built using the graphical user interface (GUI). The jar file and detailed tutorail can be found here https://vcell.org/ssalad. </li>
     <li> After defining the molecules and reaction rules, volume of the simulation box and simulation time (along with timestep and output inteval time) are set. File_08 is an example input file (for the "reference system") containing all the simulation details. </li>
-  <li> SpringSaLaD has funtionalities to launch the multiple simulations locally from the GUI. But due to the intensive computations, we run multiple simulations (file_09) in our hpc facility. File_11 is the numerical solver needed to execute such simulations.  
+  <li> SpringSaLaD has funtionalities to launch the multiple simulations locally from the GUI. But due to the intensive computations, we run multiple simulations (file_09) in our hpc facility. File_11 is the numerical solver needed to execute such simulations. </li>
+  <li> Once multiple runs are executed, a python script is used to compile all those data and perform statistical analysis of the molecular concentrations and molecular clusters.</li>
+    
       
