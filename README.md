@@ -1,5 +1,5 @@
 # Ksp_phase_separation
-<h2> 1. NFsim simulations: </h2>
+<h2> 1. NFsim simulations </h2>
 <ul> 
   <li> We generate the <b> two components </b> bngl files (http://bionetgen.org/) using a custom python script (file 00); <b>three components</b> files (Nephrin-Nck-NWASP system) are written manually.  </li>  
  <li> The bngl file (file 01) is then converted to an xml file (file 02); detailed methods can be found here https://emonet.biology.yale.edu/sites/default/files/files/NFsim_manual_v1_11.pdf.  </li>
@@ -12,6 +12,7 @@
 </ul>
 <h2> 2. SpringSaLaD simulations </h2>
 <ul>
-    <li> SpringSaLaD models are built using the graphical user interface. The jar file and detailed tutorail can be found here https://vcell.org/ssalad. </li>
-    <li> After defining the molecules and reaction rules, volume of the simulation box and simulation time (along with timestep and output inteval time) are set. File_08 is an example input file (for the "reference system") containing all the simulation details. 
+    <li> SpringSaLaD models are built using the graphical user interface (GUI). The jar file and detailed tutorail can be found here https://vcell.org/ssalad. </li>
+    <li> After defining the molecules and reaction rules, volume of the simulation box and simulation time (along with timestep and output inteval time) are set. File_08 is an example input file (for the "reference system") containing all the simulation details. </li>
+  <li> SpringSaLaD has funtionalities to launch the multiple simulations locally from the GUI. But due to the intensive computations, we run multiple simulations (file_09) in our hpc facility. File_11 is the numerical solver needed to execute such simulations.  
       
