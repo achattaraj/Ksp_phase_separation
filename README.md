@@ -1,7 +1,7 @@
 # Ksp_phase_separation
 <h2> 1. NFsim simulations </h2>
 <ul> 
-  <li> We generate the <b> two components </b> bngl files (http://bionetgen.org/) using a custom python script (file 00); <b>three components</b> files (A-B-C system) are written manually.  </li>  
+  <li> We generate the <b> two components </b> bngl files (http://bionetgen.org/) using a custom python script (file 00); <b>three components</b> files (A3 - B13 - C6 system) are written manually.  </li>  
  <li> The bngl file (file 01) is then converted to an xml file (file 02); detailed methods can be found here https://emonet.biology.yale.edu/sites/default/files/files/NFsim_manual_v1_11.pdf.  </li>
    <li> The xml file is then used as an input file to run multiple stochastic trajectories. The jobs are parallely executed in a high performance computing facility (https://health.uconn.edu/high-performance-computing/) using a custom shell script (file 03). </li>
     <li> Each trajectory or run would generate two output files: <ul> <li> gdat file containing the observables data (Run_x.gdat) </li> <li> species file containing the molecular clusters at the last time point of simulations (Run_x.species)</li> </ul> </li>
