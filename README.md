@@ -1,4 +1,4 @@
-<h3> This is the method section of the eLife reserach article - "The solubility product extends the buffering concept to heterotypic biomolecular condensates" (https://elifesciences.org/articles/67176) </h3>
+<h3> The repository contains tools for data generation and analysis for the eLife reserach article - "The solubility product extends the buffering concept to heterotypic biomolecular condensates" (https://elifesciences.org/articles/67176) </h3>
 
 <h2> 1. NFsim simulations </h2>
 <ul> 
