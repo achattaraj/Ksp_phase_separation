@@ -1,5 +1,5 @@
-<h3> The master branch contains the source data for article figures </h3>
-# Ksp_phase_separation
+<h3> This is the method section of the eLife reserach article - "The solubility product extends the buffering concept to heterotypic biomolecular condensates" (https://elifesciences.org/articles/67176) </h3>
+
 <h2> 1. NFsim simulations </h2>
 <ul> 
   <li> We generate the <b> two components </b> bngl files (http://bionetgen.org/) using a custom python script (file 00); <b>three components</b> files (A<sub>3</sub> - B<sub>1,3</sub> - C<sub>6</sub> system) are written manually.  </li>  
